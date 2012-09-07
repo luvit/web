@@ -4,11 +4,7 @@ local table = require('table')
 local parseUrl = require('http_parser').parseUrl
 local ReadableStream = require('continuable').ReadableStream
 
-local web = {
-  cleanup = require('./middleware/cleanup.lua'),
-  log = require('./middleware/log.lua'),
-  static = require('./middleware/static.lua')
-}
+local web = {}
 
 local STATUS_CODES = {
   [100] = 'Continue',
