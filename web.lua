@@ -84,6 +84,7 @@ function web.socketHandler(app) return function (client)
       request.url = url
       request.headers = headers
       request.parser = parser
+      request.socket = client
       app(request, function (statusCode, headers, body)
         local reasonPhrase = STATUS_CODES[statusCode] or 'unknown'
         if not reasonPhrase then error("Invalid response code " .. tostring(statusCode)) end
